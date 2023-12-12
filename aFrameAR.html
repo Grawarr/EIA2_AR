@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
+</head>
+<body>
+    <a-scene embedded arjs="trackingMethod: best;">
+        <!-- Marker to track -->
+        <a-marker preset="custom" type="pattern" src="pattern-800px_COLOURBOX5426390.patt">
+            <!-- 3D model of a cylinder -->
+            <a-entity
+                gltf-model="url(LowPolyGHB.gltf)"
+                scale="0.05 0.05 0.05"
+                position="0 0 0"
+            >
+            <a-material
+            color="white"
+            roughness="1"
+            metalness="0.5"
+        >
+            <a-image
+                src="LowPolyGHB_Diffuse.jpg"
+                height="512"
+                width="512"
+            ></a-image>
+        </a-material>
+        </a-entity>
+        </a-marker>
+
+        <!-- Camera setup -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
